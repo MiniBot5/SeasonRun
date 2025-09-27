@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
+    private int i = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
