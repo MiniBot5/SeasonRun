@@ -7,6 +7,7 @@ public class FinishLine : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Racer racer = other.GetComponent<Racer>();
+        Debug.Log(racer);
 
         if (racer.HasClearedAllCheckpoints())
         {

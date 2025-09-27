@@ -19,6 +19,7 @@ public class Racer : MonoBehaviour
         if (checkpointIndex >= 0 && checkpointIndex < checkpointsVisited.Length)
         {
             checkpointsVisited[checkpointIndex] = true;
+            Debug.Log(racerName + " reached checkpoint " + checkpointIndex);
         }
     }
 

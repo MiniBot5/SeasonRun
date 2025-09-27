@@ -6,7 +6,7 @@ using TMPro;
 public class RaceManager : MonoBehaviour
 {
     [Header("Race Settings")]
-    public int totalLaps = 8;
+    public int totalLaps = 3;
     public int totalCheckpoints = 7;
 
     [Header("Players")]
@@ -16,7 +16,7 @@ public class RaceManager : MonoBehaviour
 
     [Header("UI")]
     public GameObject endScreenUI;
-    public Text EndText;
+    public TextMeshProUGUI EndText;
 
     private bool raceOver = false;
 
@@ -30,7 +30,7 @@ public class RaceManager : MonoBehaviour
         if (raceOver) return;
 
         racer.currentLap++;
-        Debug.Log(racer.racerName + " is now on lap " + racer.currentLap);
+        Debug.Log(racer.racerName + " is now on lap " + racer.currentLap + 1);
 
         if (racer.currentLap > totalLaps)
         {
