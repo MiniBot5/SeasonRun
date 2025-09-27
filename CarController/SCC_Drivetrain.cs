@@ -16,6 +16,10 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class SCC_Drivetrain : MonoBehaviour {
 
+    
+    [SerializeField]
+    private int id;
+
     //  Rigidbody.
     private Rigidbody rigid;
     private Rigidbody Rigid {
@@ -48,6 +52,15 @@ public class SCC_Drivetrain : MonoBehaviour {
 
     }
 
+    public void Start()
+    {
+        Car car = new
+            (
+            name = "Player " + id,
+            false,
+            id
+            );
+    }
     //  Input processor.
     private SCC_InputProcessor inputProcessor;
     private SCC_InputProcessor InputProcessor {
