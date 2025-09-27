@@ -32,7 +32,7 @@ public class RaceManager : MonoBehaviour
         racer.currentLap++;
         Debug.Log(racer.racerName + " is now on lap " + racer.currentLap + 1);
 
-        if (racer.currentLap > totalLaps)
+        if (racer.currentLap >= totalLaps)
         {
             RaceFinished(racer);
         }

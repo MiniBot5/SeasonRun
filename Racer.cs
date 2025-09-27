@@ -3,7 +3,7 @@ using UnityEngine;
 public class Racer : MonoBehaviour
 {
     public string racerName;
-    public int currentLap = 0;
+    public int currentLap = 1;
 
     [Header("Car References")]
     public Transform carRoot;      // assign the top-level car object
