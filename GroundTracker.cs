@@ -18,6 +18,7 @@ public class GroundTracker: MonoBehaviour
         }
     }
 
+    private Racer racer = new();
     [SerializeField]
     private GameObject _carObject;
     public void Start()
@@ -32,25 +33,25 @@ public class GroundTracker: MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Grass"))
             {
-                _carObject.GetComponent<SCC_Drivetrain>().engineTorque = 200;
+                _carObject.GetComponent<SCC_Drivetrain>().engineTorque = 100;
                 Debug.Log(_carObject.GetComponent<SCC_Drivetrain>().engineTorque);
             }
-            else if (hit.collider.gameObject.CompareTag("Ice"))
+            else if (hit.collider.gameObject.CompareTag("Ice") !& _carObject.GetComponent<SCC_Drivetrain>().car.NonSlip)
             {
-
+                _carObject.GetComponent<SCC_Drivetrain>().brakeTorque = 100;
             }
-            else if (hit.collider.CompareTag("Water"))
+            else if (hit.collider.gameObject.CompareTag("Water"))
             {
-
+                racer.ResetToLastCheckpoint();
             }
-            else if (hit.collider.CompareTag("Leaves"))
-            {
-                Rotate(5f);
-                Destroy(hit.collider.gameObject);
-            }
+            //else if (hit.collider.gameObject.CompareTag("Leaves"))
+            //{
+            //    Rotate(5f);
+            //    Destroy(hit.collider.gameObject);
+            // }
             else
             {
-                _carObject.GetComponent<SCC_Drivetrain>().engineTorque = 600;
+                _carObject.GetComponent<SCC_Drivetrain>().engineTorque = 1000;
                 Debug.Log(_carObject.GetComponent<SCC_Drivetrain>().engineTorque);
             }
                 

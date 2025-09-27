@@ -16,7 +16,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 public class SCC_Drivetrain : MonoBehaviour {
 
-    
+    public Car car;
     [SerializeField]
     private int id;
 
@@ -54,12 +54,7 @@ public class SCC_Drivetrain : MonoBehaviour {
 
     public void Start()
     {
-        Car car = new
-            (
-            name = "Player " + id,
-            false,
-            id
-            );
+        car = new("Player 1", false, 1);
     }
     //  Input processor.
     private SCC_InputProcessor inputProcessor;

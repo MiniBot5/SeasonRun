@@ -20,8 +20,9 @@ public class Car
 {
     public string Name;
     public bool NonSlip;
+    public bool grassShield;
     public int ID;
-    public Car(string name, bool nonSlip, int ID) 
+    public Car(string name, bool nonSlip, bool grassShield, int ID) 
     {
         string Name;
         bool NonSlip;

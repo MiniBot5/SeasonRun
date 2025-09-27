@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Racer : MonoBehaviour
 {
@@ -25,7 +26,6 @@ public class Racer : MonoBehaviour
         if (carRoot == null) carRoot = transform.root;
         if (carRigidbody == null) carRigidbody = carRoot.GetComponent<Rigidbody>();
     }
-
     private void Update()
     {
         // Handle "hold E to reset"
@@ -44,6 +44,7 @@ public class Racer : MonoBehaviour
             resetHoldTime = 0f;
         }
     }
+ 
 
     public void CheckpointReached(int checkpointIndex, Transform checkpointTransform)
     {
