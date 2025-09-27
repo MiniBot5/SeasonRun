@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class RaceManager : MonoBehaviour
 {
     [Header("Race Settings")]
     public int totalLaps = 8;
+    public int totalCheckpoints = 7;
 
     [Header("Players")]
     public Racer player1;
     public Racer player2;
+
 
     [Header("UI")]
     public GameObject endScreenUI;
@@ -27,7 +30,7 @@ public class RaceManager : MonoBehaviour
         if (raceOver) return;
 
         racer.currentLap++;
-        Debug.Log(racer.name + " is now on lap " + racer.currentLap);
+        Debug.Log(racer.racerName + " is now on lap " + racer.currentLap);
 
         if (racer.currentLap > totalLaps)
         {
@@ -38,10 +41,10 @@ public class RaceManager : MonoBehaviour
     void RaceFinished(Racer winner)
     {
         raceOver = true;
-        Debug.Log(winner.name + " wins!");
+        Debug.Log(winner.racerName + " wins!");
 
         endScreenUI.SetActive(true);
-        EndText.text = winner.name + " Wins!";
+        EndText.text = winner.racerName + " Wins!";
         Time.timeScale = 0f;
     }
 

@@ -8,6 +8,11 @@ public class FinishLine : MonoBehaviour
     {
         Racer racer = other.GetComponent<Racer>();
 
-        raceManager.OnPlayerLapComplete(racer);
+        if (racer.HasClearedAllCheckpoints())
+        {
+            raceManager.OnPlayerLapComplete(racer);
+            Debug.Log("Lap completed!");
+            racer.ResetCheckpoints();
+        }
     }
 }
