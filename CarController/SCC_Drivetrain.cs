@@ -54,7 +54,7 @@ public class SCC_Drivetrain : MonoBehaviour {
 
     public void Start()
     {
-        car = new("Player 1", false, 1);
+        car = new("Player 1", false, false, 1);
     }
     //  Input processor.
     private SCC_InputProcessor inputProcessor;
