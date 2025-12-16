@@ -24,8 +24,5 @@ public class Car
     public int ID;
     public Car(string name, bool nonSlip, bool grassShield, int ID) 
     {
-        string Name;
-        bool NonSlip;
-        int Id;
     }
 }

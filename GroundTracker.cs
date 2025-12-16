@@ -31,7 +31,7 @@ public class GroundTracker: MonoBehaviour
         
         if (Physics.SphereCast(gameObject.transform.position, .1f, Vector3.down, out RaycastHit hit))
         {
-            if (hit.collider.gameObject.CompareTag("Grass"))
+            if (hit.collider.gameObject.CompareTag("Grass") !& _carObject.GetComponent<SCC_Drivetrain>().car.grassShield)
             {
                 _carObject.GetComponent<SCC_Drivetrain>().engineTorque = 100;
                 Debug.Log(_carObject.GetComponent<SCC_Drivetrain>().engineTorque);
@@ -39,6 +39,7 @@ public class GroundTracker: MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("Ice") !& _carObject.GetComponent<SCC_Drivetrain>().car.NonSlip)
             {
                 _carObject.GetComponent<SCC_Drivetrain>().brakeTorque = 100;
+                Debug.Log("Icebaby");
             }
             else if (hit.collider.gameObject.CompareTag("Water"))
             {
@@ -52,6 +53,7 @@ public class GroundTracker: MonoBehaviour
             else
             {
                 _carObject.GetComponent<SCC_Drivetrain>().engineTorque = 1000;
+                _carObject.GetComponent<SCC_Drivetrain>().brakeTorque = 1000;
                 Debug.Log(_carObject.GetComponent<SCC_Drivetrain>().engineTorque);
             }
                 
